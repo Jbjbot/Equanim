@@ -1,0 +1,15 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	<div class="tease__image--container">
+		{% if post.thumbnail %}
+			<img src="{{ post.thumbnail.id|get_timber_image_responsive('mediator-thumbnail') }}" alt="">
+		{% endif %}
+	</div>
+	<div class="tease__content">
+		<h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+		{% if post.get_field('_bio') is not empty %}
+			{{ post.get_field('_bio')|myTruncate(25, '') }}
+		{% endif %}
+	</div>
+{% endblock %}

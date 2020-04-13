@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}" itemscope itemtype="https://schema.org/BlogPosting">
+		<div class="article__wrapper">
+			<div class="article__content">
+				<header class="article__header">
+					<h1 class="article__h1" itemprop="headline">{{ post.title }}</h1>
+					<span>&nbsp;&ndash;&nbsp;{{ post.get_field('_fonction') }}</span>
+					<meta itemprop="image" content="{{ post.thumbnail.src }}">
+				</header>
+				<section class="article__body" itemprop="articleBody">
+					{% if post.thumbnail %}
+						<figure class="article__image--container">
+							<img {{ post.thumbnail|get_timber_image_responsive('mediator-thumbnail') }}>
+						</figure>
+					{% endif %}
+					{{ post.get_field('_bio') }}
+				</section><!-- /section -->
+				<link itemprop="mainEntityOfPage" href="{{ post.link }}" />
+			</div>
+		</div>
+	</article><!-- /article -->
+{% endblock %}

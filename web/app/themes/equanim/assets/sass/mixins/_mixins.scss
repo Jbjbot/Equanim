@@ -1,0 +1,54 @@
+// ---------------------------------------------------------------------------
+// Fluid Font Sizing
+// ---------------------------------------------------------------------------
+
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+  @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@mixin fluid-size($attribute: font-size, $min-size: 16px, $max-size: 38px, $min-width: 400px, $max-width: 1400px) {
+  #{$attribute}: $min-size;
+
+  @media screen and (min-width: $min-width) {
+    #{$attribute}: calc(#{$min-size} + (#{strip-units($max-size)} - #{strip-units($min-size)}) * (100vw - #{$min-width}) / (#{strip-units($max-width)} - #{strip-units($min-width)}));
+  }
+  @media screen and (min-width: $max-width) {
+    #{$attribute}: $max-size;
+  }
+}
+
+@mixin fluid-font-size($min-size: 16px, $max-size: 38px, $min-width: 400px, $max-width: 1400px) {
+  @include fluid-size(font-size, $min-size, $max-size, $min-width, $max-width);
+}
+
+// ---------------------------------------------------------------------------
+// Control opacity of a color variable
+// ---------------------------------------------------------------------------
+
+// credits: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables;
+@mixin defineHSLColor($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+}
+
+// return css color variable with different opacity value
+@function alpha($color, $opacity){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla($color-h, $color-s, $color-l, $opacity);
+}
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}

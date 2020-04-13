@@ -1,0 +1,12 @@
+{% block footer %}
+    <div class="ftr__container">
+        <div class="footer__cols" >
+            <div class="footer__content">
+            	<img src="{{ site.theme.uri }}/dist/images/monogramme.png" alt="">
+            </div>
+        </div>
+        <div class="footer__copyright">
+            &copy; {{"now"|date('Y')}} {{ site.name }} | {{ __('Tous droits réservés', 'equanim') }} | <div class="footer__nav">{% include "menu.twig" with {'menu': menu_footer.get_items} %}</div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+#nav__main {
+  padding: space(1) 0;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  a {
+    display: block;
+    padding: space(1) space(1.5);
+    font-family: $font-family-body;
+    font-size: 1em;
+    color: var(--white);
+  }
+}
+
+.hdr__menu {
+  display: none;
+}
+
+@include media-breakpoint-up(xl) {
+  .hdr__menu {
+    display: flex;
+  }
+}

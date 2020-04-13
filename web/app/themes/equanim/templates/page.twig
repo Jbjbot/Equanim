@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}" itemscope itemtype="https://schema.org/WebPage">
+		<section class="section__container">
+			<div class="section__wrapper">
+				<div class="section__content">
+					<h1 class="section__h1" itemprop="headline">{{post.title}}</h1>
+					<div class="section__body">
+						{{post.content}}
+					</div>
+				</div>
+			</div>
+		</section><!-- /section -->
+	</article><!-- /article -->
+{% endblock %}

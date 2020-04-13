@@ -1,0 +1,15 @@
+.pagination-block {
+  @include make-row();
+  .pagination {
+    @include make-col-ready();
+    @include make-col(12);
+    align-items: center;
+    justify-content: center;
+    .btn {
+      a, span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}

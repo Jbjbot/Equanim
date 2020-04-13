@@ -1,0 +1,81 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% if post.get_field('_content_bloc') is not null %}
+		<article class="post-type-{{post.post_type}} {{ post.name|lower|striptags }}" id="post-{{post.ID}}" itemscope itemtype="https://schema.org/WebPage">
+			{% for item in post.get_field('_content_bloc') %}
+				{% if item.acf_fc_layout == "_intro" %}
+					<section id="section_{{ item.acf_fc_layout }}">
+						<div class="section__container">
+							<div class="section__wrapper">
+								<div class="section__content">
+									<h1 class="section__title tl__blue tl__border" itemprop="headline">
+										<span>{{ item._title }}</span>
+									</h1>
+									<div class="section__body">
+										{{ item._text }}
+									</div>
+								</div>
+								<div class="shape">
+									<div class="figure">
+										<div class="losange">
+											<img src="{{ site.theme.uri }}/dist/images/maarten.jpg" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- /section -->
+				{% endif %}
+
+				{% if item.acf_fc_layout == "_carousel" %}
+					<section id="section_{{ item.acf_fc_layout }}">
+						<div class="section__container">
+							<div class="section__wrapper">
+								<div class="section__content">
+									<h1 class="section__title tl__beige" itemprop="headline">
+										<span>{{ item._title }}</span>
+									</h1>
+									<div class="section__body">
+										{% if item._object_article %}
+											<div class="section__carousel carousel-js">
+												{% for post in item._object_article  %}
+													<div class="carousel__cell">
+														{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+													</div>
+												{% endfor %}
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- /section -->
+				{% endif %}
+
+				{% if item.acf_fc_layout == "_actu" %}
+					<section id="section_{{ item.acf_fc_layout }}">
+						<div class="section__container">
+							<div class="section__wrapper">
+								<div class="section__content">
+									<h1 class="section__title tl__blue tl__border" itemprop="headline">
+										<span>{{ item._title }}</span>
+									</h1>
+									<div class="section__body">
+										{% if item._article %}
+											<div class="section__articles">
+												{% for post in item._article  %}
+													{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+												{% endfor %}
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- /section -->
+				{% endif %}
+			{% endfor %}
+		</article><!-- /article -->
+	{% endif %}
+{% endblock %}

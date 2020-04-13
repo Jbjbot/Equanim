@@ -1,0 +1,23 @@
+{# see `archive.twig` for an alternative strategy of extending templates #}
+{% extends "base.twig" %}
+
+{% block content %}
+  {# see `base.twig:27` for where this block's content will be inserted #}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+    <div class="grid grid-js are-images-unloaded">
+      {% for post in posts %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+      {% endfor %}
+    </div>
+    <div class="page-load-status">
+      <p class="infinite-scroll-last">{{ __('Tout les articles ont été chargés', 'snes') }}</p>
+      <p class="infinite-scroll-error">{{ __('Plus aucunes pages à charger', 'snes') }}</p>
+    </div>
+    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-title;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+%h1, .h1 {
+	font-size: 2em;
+}
+
+%h3 {
+	font-size: .75em;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+	&:hover {
+		color: var(--primary);
+		text-decoration: underline;
+	}
+}
+
+a:active {
+	color: var(--secondary);
+}

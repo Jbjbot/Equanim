@@ -1,0 +1,60 @@
+/*----------------------
+MASONRY
+------------------------*/
+.list__article--container {
+  @include make-container();
+}
+// creates a wrapper for a series of columns
+.list__article--wrapper {
+  @include make-row();
+  margin: space(3.125) 0 space(2.8125);
+  .tease.tease__mediator {
+    @include make-col(12);
+  }
+}
+
+.grid.are-images-unloaded {
+  opacity: 0;
+}
+
+.page-load-status {
+  display: none;
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+@include media-breakpoint-up(sm) {
+  .list__article--container {
+    max-width: map_get($container-max-widths, 'sm');
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .list__article--container {
+    max-width: map_get($container-max-widths, 'md');
+  }
+  .list__article--wrapper {
+    .tease.tease__mediator {
+      @include make-col(6);
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .list__article--container {
+    max-width: map_get($container-max-widths, 'lg');
+  }
+  .list__article--wrapper {
+    .tease.tease__mediator {
+      @include make-col(3);
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .list__article--container {
+    max-width: map_get($container-max-widths, 'xl');
+  }
+}

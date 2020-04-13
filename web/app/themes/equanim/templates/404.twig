@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="page-404" itemscope itemtype="https://schema.org/WebPage">
+		<section class="section__container">
+			<div class="section__wrapper">
+				<div class="section__content">
+					<h1 class="section__h1" itemprop="headline">{{__('404 erreur', 'jb-starter-theme')}}</h1>
+					<div class="section__body">
+						<div class="alert alert-danger" role="alert">
+							{{__('Désolé, nous ne pouvons trouver ce que vous cherchez.', 'jb-starter-theme')}}
+						</div>
+						<a href="/">{{__('Retour à l\'accueil', 'jb-starter-theme')}}</a>
+					</div>
+				</div>
+			</div>
+		</section><!-- /section -->
+	</article><!-- /article -->
+{% endblock %}

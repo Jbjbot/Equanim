@@ -1,0 +1,23 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js no-svg ie ie6 lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 7]><html class="no-js no-svg ie ie7 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 8]><html class="no-js no-svg ie ie8 lt-ie9" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset }}" />
+    {% if yoast is empty %}
+        <meta name="description" content="{{ site.description }}">
+        <meta name="author" lang="fr" content="Julien Bredon">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ site.theme.uri }}/assets/" />
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ site.theme.uri }}/assets/" />
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ site.theme.uri }}/assets/" />
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ site.theme.uri }}/assets/" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <noscript>Your browser does not support JavaScript!</noscript>
+    {{function('wp_head')}}

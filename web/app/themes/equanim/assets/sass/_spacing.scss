@@ -1,0 +1,15 @@
+$space: 1rem;
+
+:root {
+	--space: #{$space};
+}
+
+@function space($i) {
+	@return calc(var(--space) * #{$i})
+}
+
+@each $i in 1, 2, 3, 4, 10 {
+	.mb-#{$i} {
+		margin-bottom: space($i);
+	}
+}

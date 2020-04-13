@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}" itemscope itemtype="https://schema.org/BlogPosting">
+		<div class="article__wrapper">
+			<div class="article__content">
+				<header class="article__header">
+					<img src="{{post.thumbnail|get_timber_image_responsive('banner')}}">
+					<meta itemprop="image" content="{{post.thumbnail.src}}">
+				</header>
+				<section class="article__body" itemprop="articleBody">
+					<h1 class="article__h1" itemprop="headline">{{ post.title }}</h1>
+					{% if post_type == 'post' %}
+						<p class="blog-author">
+							<span>De</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span><span itemprop="datePublished" content="{{post.post_date}}"> {{ post.date }}</span>
+							<meta itemprop="dateModified" content="{{post.post_modified}}">
+							<meta itemprop="author" content="{{post.author.name}}">
+						</p>
+					{% endif %}
+					{{post.content}}
+				</section><!-- /section -->
+				<link itemprop="mainEntityOfPage" href="http://example.com/article-1" />
+			</div>
+		</div>
+		
+	</article><!-- /article -->
+{% endblock %}

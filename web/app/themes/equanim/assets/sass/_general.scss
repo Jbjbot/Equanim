@@ -1,0 +1,60 @@
+/*----------------------
+SITE WRAPPER
+------------------------*/
+body {
+  font-family: $font-family-body;
+  line-height: $base-line-height;
+  font-size: $font-size;
+  background-color: var(--white);
+  color: $body-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  border-radius: $border-radius;
+}
+
+/*----------------------
+sr-only (screen reader only)
+------------------------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/*----------------------
+MAP
+------------------------*/
+a[href^="http://maps.google.com/maps"]{ display:none !important }
+a[href^="https://maps.google.com/maps"]{ display:none !important }
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
+}
+
+.gmnoprint div {
+  background:none !important;
+}
+
+/*----------------------
+404
+------------------------*/
+.error-4xx {
+  padding: 2rem 0;
+  margin: 2rem 0 5rem;
+  font-size: 1.875rem;
+}

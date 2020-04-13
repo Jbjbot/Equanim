@@ -1,0 +1,20 @@
+{% block header %}
+	<div class="hdr__container">
+		<h1 class="hdr__logo">
+			<a class="hdr__logo-link" href="{{ site.url }}" rel="home">
+				{% if logo %}
+					<img src="{{ logo|get_timber_image_responsive('logo') }}" alt="{{ site.name }}">
+				{% else %}
+					{{ site.name }}
+				{% endif %}
+			</a>
+		</h1>
+		<div class="hdr__menu">
+			<nav id="nav__main" class="nav-main" role="navigation" aria-label="{{ __('Top menu', 'jb-starter-theme') }}">
+				{% include "menu.twig" with {'menu': menu.get_items} %}
+			</nav><!-- #nav -->
+			{% include "partial/wpml.twig" %}
+		</div>
+		<a href="#0" id="nav__trigger" class="nav__trigger" rel="nofollow"><span></span></a>
+	</div>
+{% endblock %}

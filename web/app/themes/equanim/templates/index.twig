@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <section class="list__article--container">
+        <div class="list__article--wrapper grid-js are-images-unloaded" itemscope itemtype="https://schema.org/ItemList" itemprop="mainEntity">
+            {% for post in posts %}
+                {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+            {% endfor %}
+        </div>
+        <div class="page-load-status">
+            <p class="infinite-scroll-last">{{ __('Tout les articles ont été chargés', 'snes') }}</p>
+            <p class="infinite-scroll-error">{{ __('Plus aucunes pages à charger', 'snes') }}</p>
+        </div>
+        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </section>
+{% endblock %}

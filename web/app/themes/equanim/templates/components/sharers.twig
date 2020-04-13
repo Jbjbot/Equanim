@@ -1,0 +1,9 @@
+<div class="share-buttons-wrapper">
+    <ul class="share-buttons">
+        <li><a class="js-share-facebook-link" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link|url_encode(true)}}&t={{ site.url|url_encode(true)}}" target="_blank"><span><i class="fab fa-facebook-f"></i>partager</span></a></li>
+        <li><a class="js-share-twitter-link" href="https://twitter.com/intent/tweet?text={{ post.title }}%20{{ post.link|url_encode(true)}}"><span><i class="fab fa-twitter"></i>tweeter</span></a></li>
+        <li><a class="js-share-linkedin-link" href="http://www.linkedin.com/shareArticle?mini=true&url={{ post.link|url_encode(true)}}"><span><i class="fab fa-linkedin-in"></i>partager</span></a></li>
+        <li><a class="js-share-email-link" href="mailto:?subject={{ post.title }}&body={{ post.link }}" target="_blank" title="Share an email"><span><i class="far fa-envelope"></i>mailer</span></a></li>
+        <li><a class="js-print-link" href="javascript:window.print()" title="Print"><span><i class="fas fa-print"></i>imprimer</span></a></li>
+    </ul>
+</div>

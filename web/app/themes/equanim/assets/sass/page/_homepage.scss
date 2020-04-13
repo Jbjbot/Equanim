@@ -1,0 +1,146 @@
+#section__intro {
+	position: relative;
+	background: url(#{$img-path}/images/motif.png);
+	background-repeat: repeat;
+	background-size: 350px;
+	overflow: hidden;
+	.section__title {
+		width: 375px;
+	}
+	.section__body {
+		width: 470px;
+		max-width: 100%;
+	}
+	.shape {
+		display: none;
+		position: absolute;
+		top: 50%;
+		right: 37px;
+		transform: translateY(-50%);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: 829px;
+			height: 712px;
+			background: url('#{$img-path}/images/losanges_bleu.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+	.figure,
+	.figure > div {
+		margin: 0 auto;
+		transform-origin: 50% 50%;
+		overflow: hidden;
+		width: 385px;
+		height: 385px;
+	}
+	.figure {
+		transform: rotate(45deg) translateX(-6px) translateY(-6px);
+		.losange {
+			width: 535px;
+			height: 535px;
+			transform: rotate(-45deg) translateY(-110px);
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+#section__carousel {
+	background-color: var(--primary);
+	.section__carousel {
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.carousel__cell {
+		width: 100%;
+		min-height: 325px;
+		margin-bottom: space(1);
+		margin-right: space(1);
+	}
+	.flickity-prev-next-button {
+		top: calc((44px + (#{space(1.875)} * 2)) * -1);
+		-webkit-transform: none;
+		transform: none;
+		background: transparent;
+		border-radius: unset;
+		svg {
+			fill: var(--white);
+		}
+	}
+	.flickity-prev-next-button.previous {
+		left: auto;
+		right: 60px;
+	}
+	.flickity-prev-next-button.next {
+		right: 10px;
+	}
+	.tease__mediator {
+		a {
+			color: var(--white);
+		}
+		.tease__content {
+			color: var(--white);
+		}
+	}
+}
+
+#section__actu {
+	.section__articles {
+		@include make-row();
+	}
+}
+
+
+/**
+ * Dedicated to GSAP
+ * For a better rendering, we hide the given element
+ */
+
+ #section__intro,
+ #section__carousel,
+ #section__actu {
+ 	.section__content {
+ 		opacity: 0;
+ 		visibility: hidden;
+ 	}
+ }
+
+ #section__intro {
+ 	.shape {
+ 		opacity: 0;
+ 		visibility: hidden;
+ 	}
+ }
+
+
+// Media query
+@include media-breakpoint-up(md) {
+	#section__carousel {
+		.carousel__cell {
+			width: calc(100% / 2 - #{space(1)});
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	#section__intro {
+		.shape {
+			display: block;
+		}
+	}
+
+	#section__carousel {
+		.carousel__cell {
+			width: calc(100% / 3 - #{space(1)});
+		}
+	}
+}
+

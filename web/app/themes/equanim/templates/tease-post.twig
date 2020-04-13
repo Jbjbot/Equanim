@@ -1,0 +1,19 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	<div class="tease__container">
+		<div class="tease__image--container">
+			{% if post.thumbnail %}
+				<img{{ post.thumbnail|get_timber_image_responsive('article-thumbnail') }}>
+			{% else %}
+				<img src="{{ Image(site.theme.uri ~ '/dist/images/equanim-default.png') }}" width="370" height="250" alt="">
+			{% endif %}
+		</div>
+		<div class="tease__content">
+			<h2 class="h2"><a itemprop="item" href="{{ post.link }}">{{ post.title }}</a></h2>
+			<p>{{ post.get_preview(25, true, 'Lire la suite') }}</p>
+			<meta itemprop="url" content="{{ post.link }}">
+			<meta itemprop="position" content="{{ loop.index }}">
+		</div>
+	</div>
+{% endblock %}

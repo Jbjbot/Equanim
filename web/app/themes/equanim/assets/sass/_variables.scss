@@ -1,0 +1,49 @@
+// Color
+:root  {
+  @include defineHSLColor(--white, 0, 100%, 100%);
+  @include defineHSLColor(--black, 0, 0%, 20%);
+  @include defineHSLColor(--gray, 0, 0%, 81%);
+  @include defineHSLColor(--primary, 200, 100%, 12%);
+  @include defineHSLColor(--secondary, 35, 64%, 91%);
+}
+
+// Variable
+$base-line-height: 1.4;
+$font-family-body: 'Geomanist', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$font-family-title: 'Plantagenet Cherokee', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$border-radius: 3px;
+$font-size: 1rem;
+$body-color: var(--primary);
+
+// Dev
+$font-path: '/app/themes/equanim/dist';
+$img-path: '/app/themes/equanim/dist';
+
+// Prod
+//$font-path: '/wp-content/themes/equanim/dist';
+//$img-path: '/wp-content/themes/equanim/assets/img';
+
+// Breakpoint
+$grid-breakpoints: ();
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+  ),
+  $grid-breakpoints
+);
+
+// Container max-width
+$container-max-widths: ();
+$container-max-widths: map-merge(
+  (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px
+  ),
+  $container-max-widths
+);

@@ -1,0 +1,11 @@
+<article class="tease tease__{{post.post_type}}" id="tease-{{post.ID}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+	{% block content %}
+		<h2 class="h2"><a itemprop="item" href="{{ post.link }}" >{{ post.title }}</a></h2>
+		<p>{{ post.preview }}</p>
+		{% if post.get_thumbnail %}
+			<img src="{{ post.thumbnail.src }}" alt="" />
+		{% endif %}
+		<meta itemprop="url" content="{{ post.link }}">
+		<meta itemprop="position" content="{{ loop.index }}">
+	{% endblock %}
+</article>

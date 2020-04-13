@@ -1,0 +1,84 @@
+.header {
+  background-color: var(--primary);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  .hdr__container {
+    z-index: 1;
+    @include make-container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hdr__logo {
+  margin: 0;
+  max-width: 140px;
+  position: relative;
+  &::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 450px;
+    height: 125px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(#{$img-path}/images/losanges_bleu.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 450px 450px;
+  }
+}
+
+.hdr__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hdb__lg {
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    margin: 0 space(.5);
+  }
+  > a {
+    padding-left: space(1);
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .hdr__container {
+    max-width: map_get($container-max-widths, 'sm');
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .hdr__container {
+    max-width: map_get($container-max-widths, 'md');
+  }
+  .hdr__logo {
+    max-width: 190px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hdr__container {
+    max-width: map_get($container-max-widths, 'lg');
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .hdr__container {
+    max-width: map_get($container-max-widths, 'xl');
+  }
+}

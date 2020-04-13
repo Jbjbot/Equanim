@@ -1,0 +1,11 @@
+{% if wpml is not empty %}
+	<div class="hdb__lg">
+		{% for item in wpml %}
+			{% if item.active == 0 %}
+				<a href="{{ item.url }}"><img src="{{ item.country_flag_url }}" alt="{{ item.language_code }}" /></a>
+			{% else %}
+				<img src="{{ item.country_flag_url }}" alt="{{ item.language_code }}" />
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
