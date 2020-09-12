@@ -37,6 +37,16 @@ class Functions {
 
         // *** Add new rss
         add_action( 'do_feed_rss2', array( get_called_class(), 'feed'), 10, 1);
+
+        add_filter( 'script_loader_tag', array( get_called_class(), 'defer_parsing_of_js'), 10, 3);
+    }
+
+    public static function defer_parsing_of_js($tag, $handle, $src)
+    {
+        if ( is_admin() ) return $tag;
+        if ( FALSE === strpos( $tag, '.js' ) ) return $tag;
+        if ( strpos( $tag, 'jquery' ) ) return $tag;
+        return str_replace( ' src', ' defer src', $tag );
     }
 
     /** Returns a custom logo markup

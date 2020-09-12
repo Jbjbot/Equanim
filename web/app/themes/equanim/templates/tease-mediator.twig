@@ -3,7 +3,11 @@
 {% block content %}
 	<div class="tease__image--container">
 		{% if post.thumbnail %}
-			<img src="{{ post.thumbnail.id|get_timber_image_responsive('mediator-thumbnail') }}" alt="">
+			<img class="thumbnail" {{post.thumbnail.id|get_timber_image_responsive('mediator-thumbnail', {
+					lazy_srcset: true,
+					lazy_src: true,
+					lazy_sizes: true
+				}) }}>
 		{% endif %}
 	</div>
 	<div class="tease__content">

@@ -5,7 +5,7 @@
 		<article class="post-type-{{post.post_type}} {{ post.name|lower|striptags }}" id="post-{{post.ID}}" itemscope itemtype="https://schema.org/WebPage">
 			{% for item in post.get_field('_content_bloc') %}
 				{% if item.acf_fc_layout == "_intro" %}
-					<section id="section_{{ item.acf_fc_layout }}">
+					<section id="section_{{ item.acf_fc_layout }}" class="bckg" data-background-image="{{ site.theme.uri }}/dist/images/motif.png">
 						<div class="section__container">
 							<div class="section__wrapper">
 								<div class="section__content">
@@ -76,6 +76,36 @@
 					</section><!-- /section -->
 				{% endif %}
 			{% endfor %}
+
+			<section id="parallax" class="bckg" data-background-image="{{ site.theme.uri }}/dist/images/maarten.jpg">
+				<div class="section__container">
+					<div class="section__wrapper">
+						<div class="section__content">
+							<h1>Conseil scientifique</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="panel_1">
+				<div class="section__container">
+					<div class="section__wrapper">
+						<div class="section__content">
+							<h1>Conseil stratégique</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="panel_2">
+				<div class="section__container">
+					<div class="section__wrapper">
+						<div class="section__content">
+							<h1>Conseil juridique</h1>
+						</div>
+					</div>
+				</div>
+			</section>
 		</article><!-- /article -->
 	{% endif %}
 {% endblock %}

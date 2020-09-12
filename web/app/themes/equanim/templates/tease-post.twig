@@ -4,9 +4,13 @@
 	<div class="tease__container">
 		<div class="tease__image--container">
 			{% if post.thumbnail %}
-				<img{{ post.thumbnail|get_timber_image_responsive('article-thumbnail') }}>
+				<img class="thumbnail" {{ post.thumbnail|get_timber_image_responsive('article-thumbnail', {
+					lazy_srcset: true,
+					lazy_src: true,
+					lazy_sizes: true
+				}) }}>
 			{% else %}
-				<img src="{{ Image(site.theme.uri ~ '/dist/images/equanim-default.png') }}" width="370" height="250" alt="">
+				<img class="thumbnail" src="{{ Image(site.theme.uri ~ '/dist/images/equanim-default.png') }}" width="370" height="250" alt="">
 			{% endif %}
 		</div>
 		<div class="tease__content">

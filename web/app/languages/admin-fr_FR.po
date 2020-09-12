@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-04-07 21:40:41+0000\n"
+"PO-Revision-Date: 2020-04-23 09:03:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: WordPress - 5.4.x - Development - Administration\n"
 
@@ -1797,7 +1797,7 @@ msgstr "Tous les tests de vérification de santé du site sont terminés."
 
 #: wp-admin/js/site-health.js:245
 msgid "Please wait..."
-msgstr "Veuillez patienter…"
+msgstr "Veuillez patienter..."
 
 #. translators: %s: Name of the filter used.
 #: wp-admin/includes/class-wp-site-health-auto-updates.php:471
@@ -2429,11 +2429,11 @@ msgstr "Qu’est-ce que PHP et comment cela affecte t-il mon site ?"
 
 #: wp-admin/includes/dashboard.php:1732
 msgid "WordPress has detected that your site is running on an outdated version of PHP."
-msgstr "WordPress a détecté que votre site tourne sur un version obsolète de PHP."
+msgstr "WordPress a détecté que votre site tourne sur une version obsolète de PHP."
 
 #: wp-admin/includes/dashboard.php:1730
 msgid "WordPress has detected that your site is running on an insecure version of PHP."
-msgstr "WordPress a détecté que votre site tourne sur un version non sécurisée de PHP."
+msgstr "WordPress a détecté que votre site tourne sur une version non sécurisée de PHP."
 
 #: wp-admin/includes/dashboard.php:42
 msgid "PHP Update Required"
@@ -2668,7 +2668,7 @@ msgstr "La société 123 Machin Truc a été créée en 1971, et n’a cessé de
 #. translators: First page content.
 #: wp-admin/includes/upgrade.php:307
 msgid "...or something like this:"
-msgstr "... ou quelque chose comme cela :"
+msgstr "...ou quelque chose comme cela :"
 
 #. translators: First page content.
 #: wp-admin/includes/upgrade.php:302
@@ -2891,7 +2891,7 @@ msgstr "l’ID de la requête a été retourné comme n’étant pas valide lors
 #: wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php:65
 #: wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php:109
 msgid "Erasing Data..."
-msgstr "Effacement des données…"
+msgstr "Effacement des données..."
 
 #: wp-admin/erase-personal-data.php:60
 msgid "Add Data Erasure Request"
@@ -4201,7 +4201,7 @@ msgstr "%s mise à jour a échoué."
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:387
 msgid "Search installed plugins..."
-msgstr "Recherchez parmi vos extensions..."
+msgstr "Recherche d’extensions installées…"
 
 #: wp-admin/plugin-install.php:91
 msgid "You can find new plugins to install by searching or browsing the directory right here in your own Plugins section."
@@ -6495,11 +6495,11 @@ msgstr "Détails et prévisualisation"
 
 #: wp-admin/theme-install.php:57
 msgid "Search themes..."
-msgstr "Recherche parmi les thèmes..."
+msgstr "Rechercher parmi les thèmes…"
 
 #: wp-admin/theme-install.php:56
 msgid "Search Themes"
-msgstr "Chercher parmi les thèmes"
+msgstr "Rechercher des thèmes"
 
 #: wp-admin/theme-install.php:24
 msgid "Add Themes"
@@ -6568,7 +6568,7 @@ msgstr "Merci de faire de <a href=\"%s\">WordPress</a> votre outil de création.
 
 #: wp-admin/themes.php:173
 msgid "Search installed themes..."
-msgstr "Chercher parmi les thèmes installés..."
+msgstr "Rechercher des thèmes installés…"
 
 #: wp-admin/update-core.php:717
 msgid "<strong>Translations</strong> &mdash; The files translating WordPress into your language are updated for you whenever any other updates occur. But if these files are out of date, you can <strong>click the &#8220;Update Translations&#8221;</strong> button."
@@ -6649,7 +6649,7 @@ msgstr "Optimisé pour l’accessibilité"
 #. translators: %s: Theme name.
 #: wp-admin/includes/theme.php:767 wp-admin/themes.php:578
 msgid "This is a child theme of %s."
-msgstr "Ceci est un thème enfant de %s."
+msgstr "Ce thème est un thème enfant de %s."
 
 #: wp-admin/themes.php:135
 msgid "When previewing on smaller monitors, you can use the collapse icon at the bottom of the left-hand pane. This will hide the pane, giving you more room to preview your site in the new theme. To bring the pane back, click on the collapse icon again."

@@ -12,7 +12,11 @@
 				<section class="article__body" itemprop="articleBody">
 					{% if post.thumbnail %}
 						<figure class="article__image--container">
-							<img {{ post.thumbnail|get_timber_image_responsive('mediator-thumbnail') }}>
+							<img class="thumbnail" {{ post.thumbnail|get_timber_image_responsive('mediator-thumbnail', {
+								lazy_srcset: true,
+								lazy_src: true,
+								lazy_sizes: true
+							}) }}>
 						</figure>
 					{% endif %}
 					{{ post.get_field('_bio') }}

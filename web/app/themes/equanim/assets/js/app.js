@@ -11,6 +11,8 @@
 
 require('./components/carousel')
 require('./components/greensock')
+require('./components/parallax')
+require('./components/lazy')
 //require('./polyfill/picturefill.min.js')
 require('./components/cookie')
 //require('./components/function')
